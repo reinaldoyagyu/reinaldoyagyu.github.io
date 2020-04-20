@@ -17,16 +17,15 @@ function checkTime(i) {
 
 function alarm(h, m, s) {
   if ((h >= 8 && h <= 11) || (h >= 13 && h <= 18)) {
-    if ((m >= 0 && m <= 24) || (m == 30 && m <= 54)) {
+    if ((m >= 0 && m <= 24) || (m >= 30 && m <= 54)) {
       document.querySelector(".description").innerHTML = "work work!!!"
-    } if ((m >= 25 && m <= 29) || (m == 55 && m <= 59)) {
+    } else {
       document.querySelector(".description").innerHTML = "Get up and rest!!!"
     }
-  }
-  else {
-    if ((m >= 0 && m <= 24) || (m == 30 && m <= 54)) {
+  } else {
+    if ((m >= 0 && m <= 24) || (m >= 30 && m <= 54)) {
       document.querySelector(".description").innerHTML = "Do whatever you want"
-    } if ((m >= 25 && m <= 29) || (m == 55 && m <= 59)) {
+    } else {
       document.querySelector(".description").innerHTML = "Get up!!!"
     }
   }
