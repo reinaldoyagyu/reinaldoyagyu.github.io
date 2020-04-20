@@ -1,0 +1,24 @@
+.focus {
+  background-color: gray;
+}
+
+.rest {
+  background-color: crimson;
+}
+
+.play {
+  background-color: aquamarine;
+}
+
+.getUp {
+  background-color: brown;
+}
+
+#clock {
+  font-size: 2cm;
+}
+
+#description {
+  font-size: 1.2cm;
+  font-weight: 900;
+}
