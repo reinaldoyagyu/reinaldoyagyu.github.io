@@ -37,7 +37,21 @@ function startTime() {
   }
   console.log('m = ' + m + ", s = " + s)
   switch (m, s) {
-    default: console.log('switch case de teste ok')
+    case 0, 0:
+    case 5, 0:
+    case 10, 0:
+    case 15, 0:
+    case 20, 0:
+    case 25, 0:
+    case 30, 0:
+    case 35, 0:
+    case 40, 0:
+    case 45, 0:
+    case 50, 0:
+    case 55, 0:
+      console.log('switch case de teste em algum case')
+      break
+    default: console.log('switch case de teste default')
   }
   switch (m, s) {
     case 0, 0:
