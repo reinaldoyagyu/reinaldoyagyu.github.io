@@ -11,14 +11,13 @@ function startTime() {
   var s = today.getSeconds()
   m = checkTime(m)
   s = checkTime(s)
-  // document.querySelector("#clock").innerHTML = h + ":" + m + ":" + s
   document.querySelector("#hour").innerHTML = h + ":" + m
   document.querySelector("#sec").innerHTML = ":" + s
 
   if (h >= 8 && h <= 18) { var workHour = true }
   else { workHour = false }
 
-  if ((m >= 55) || (m >= 25 && m <= 30)) { var interval = true }
+  if ((m >= 55) || (m >= 25 && m < 30)) { var interval = true }
   else { interval = false }
 
   if (workHour && !interval) {
@@ -29,14 +28,17 @@ function startTime() {
   if (workHour && interval) {
     document.querySelector("#doit").innerHTML = "Get up and rest!!!"
     document.body.className = "rest"
+    document.querySelector("#timeLeft").innerHTML = timeLeft(m, s)
   }
   if (!workHour && !interval) {
     document.querySelector("#doit").innerHTML = "Do whatever you want"
     document.body.className = "play"
+    document.querySelector("#timeLeft").innerHTML = timeLeft(m, s)
   }
   if (!workHour && interval) {
     document.querySelector("#doit").innerHTML = "Get up!!!"
     document.body.className = "getUp"
+    document.querySelector("#timeLeft").innerHTML = timeLeft(m, s)
   }
 
   if (s == 0) {
