@@ -40,6 +40,7 @@ function startTime() {
       if (document.querySelector("#withSound").checked == true) {
         var audio = document.querySelector("#myAudio")
         audio.play()
+        console.log('sound played')
       }
       if (interval) {
         const notification = new Notification('Atention', {
@@ -52,7 +53,6 @@ function startTime() {
       }
       break
   }
-
   var t = setTimeout(startTime, 1000)
 }
 
