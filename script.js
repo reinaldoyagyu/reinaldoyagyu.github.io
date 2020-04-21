@@ -11,7 +11,9 @@ function startTime() {
   var s = today.getSeconds()
   m = checkTime(m)
   s = checkTime(s)
-  document.querySelector("#clock").innerHTML = h + ":" + m + ":" + s
+  // document.querySelector("#clock").innerHTML = h + ":" + m + ":" + s
+  document.querySelector("#hour").innerHTML = h + ":" + m
+  document.querySelector("#sec").innerHTML = ":" + s
 
   if (h >= 8 && h <= 18) { var workHour = true }
   else { workHour = false }
@@ -20,19 +22,20 @@ function startTime() {
   else { interval = false }
 
   if (workHour && !interval) {
-    document.querySelector("#description").innerHTML = "Work work!!!"
+    document.querySelector("#doit").innerHTML = "Work work!!!"
     document.body.className = "focus"
+    document.querySelector("#timeLeft").innerHTML = timeLeft(m, s)
   }
   if (workHour && interval) {
-    document.querySelector("#description").innerHTML = "Get up and rest!!!"
+    document.querySelector("#doit").innerHTML = "Get up and rest!!!"
     document.body.className = "rest"
   }
   if (!workHour && !interval) {
-    document.querySelector("#description").innerHTML = "Do whatever you want"
+    document.querySelector("#doit").innerHTML = "Do whatever you want"
     document.body.className = "play"
   }
   if (!workHour && interval) {
-    document.querySelector("#description").innerHTML = "Get up!!!"
+    document.querySelector("#doit").innerHTML = "Get up!!!"
     document.body.className = "getUp"
   }
 
@@ -43,12 +46,12 @@ function startTime() {
         console.log('sound played')
       }
       if (interval) {
-        const notification = new Notification('Atention', {
-          body: 'Get Out!!'
+        const notification = new Notification('Stand up', {
+          body: 'Get out!!'
         })
       } else {
         const notification = new Notification('Atention', {
-          body: 'Get Back!!'
+          body: 'Get back!!'
         })
       }
     }
@@ -59,6 +62,21 @@ function startTime() {
 function checkTime(i) {
   if (i < 10) { i = "0" + i }
   return i
+}
+
+function timeLeft(m, s) {
+  if (m >= 0 && m < 25) {
+    return (25 - m) + ":" + checkTime(60 - s) + " left"
+  }
+  if (m >= 25 && m < 30) {
+    return (30 - m) + ":" + checkTime(60 - s) + " left"
+  }
+  if (m >= 30 && m < 55) {
+    return (55 - m) + ":" + checkTime(60 - s) + " left"
+  }
+  if (m >= 55) {
+    return (60 - m) + ":" + checkTime(60 - s) + " left"
+  }
 }
 
 startTime()

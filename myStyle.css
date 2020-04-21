@@ -15,7 +15,21 @@
 }
 
 #clock {
-  font-size: 2cm;
+  display: flex;
+}
+
+h1 {
+  font-size: 16mm;
+  margin-top: 0mm;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+h2 {
+  font-size: 12mm;
+  margin-top: 4mm;
+  margin-left: 2mm;
+  margin-bottom: 0px;
 }
 
 #description {
