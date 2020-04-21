@@ -3,6 +3,7 @@ if (!("Notification" in window)) {
 }
 if (Notification.permission != "granted") { Notification.requestPermission() }
 var audio = document.querySelector("#myAudio")
+audio.play()
 
 function startTime() {
   var today = new Date()
