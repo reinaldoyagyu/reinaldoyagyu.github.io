@@ -68,16 +68,16 @@ function checkTime(i) {
 
 function timeLeft(m, s) {
   if (m >= 0 && m < 25) {
-    return (24 - m) + ":" + checkTime(60 - s) + " left"
+    return (s != 0 ? (24 - m) : (25 - m)) + ":" + (s != 0 ? checkTime(60 - s) : "00") + " left"
   }
   if (m >= 25 && m < 30) {
-    return (29 - m) + ":" + checkTime(60 - s) + " left"
+    return (s != 0 ? (29 - m) : (30 - m)) + ":" + (s != 0 ? checkTime(60 - s) : "00") + " left"
   }
   if (m >= 30 && m < 55) {
-    return (54 - m) + ":" + checkTime(60 - s) + " left"
+    return (s != 0 ? (54 - m) : (55 - m)) + ":" + (s != 0 ? checkTime(60 - s) : "00") + " left"
   }
   if (m >= 55) {
-    return (59 - m) + ":" + checkTime(60 - s) + " left"
+    return (s != 0 ? (59 - m) : (60 - m)) + ":" + (s != 0 ? checkTime(60 - s) : "00") + " left"
   }
 }
 
