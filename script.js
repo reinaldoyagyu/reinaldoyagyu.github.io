@@ -35,7 +35,10 @@ function startTime() {
     document.querySelector("#description").innerHTML = "Get up!!!"
     document.body.className = "getUp"
   }
-
+  console.log('m = ' + m + ", s = " + s)
+  switch (m, s) {
+    default: console.log('switch case de teste ok')
+  }
   switch (m, s) {
     case 0, 0:
     case 5, 0:
