@@ -1,3 +1,8 @@
+if (!("Notification" in window)) {
+  alert("This browser does not support notification")
+}
+Notification.requestPermission()
+
 function startTime() {
   var today = new Date()
   var h = today.getHours()
@@ -26,18 +31,28 @@ function startTime() {
     document.querySelector("#description").innerHTML = "Get up!!!"
     document.body.className = "getUp"
   }
-  switch (m) {
-    case 0:
-    case 5:
-    case 25:
-    case 30:
-    case 55:
-      if (document.querySelector("#withSound").checked == true && s == 0) {
+  switch (m, s) {
+    case 0, 0:
+    case 5, 0:
+    case 25, 0:
+    case 30, 0:
+    case 55, 0:
+      if (document.querySelector("#withSound").checked == true) {
         var audio = document.querySelector("#myAudio")
         audio.play()
       }
+      if (interval) {
+        const notification = new Notification('Atention', {
+          body: 'Get Out!!'
+        })
+      } else {
+        const notification = new Notification('Atention', {
+          body: 'Get Back!!'
+        })
+      }
       break
   }
+
   var t = setTimeout(startTime, 1000)
 }
 
