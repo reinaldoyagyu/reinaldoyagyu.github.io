@@ -1,7 +1,8 @@
 if (!("Notification" in window)) {
   alert("This browser does not support notification")
 }
-Notification.requestPermission()
+if (Notification.permission != "granted") { Notification.requestPermission() }
+var audio = document.querySelector("#myAudio")
 
 function startTime() {
   var today = new Date()
@@ -38,7 +39,6 @@ function startTime() {
     case 30, 0:
     case 55, 0:
       if (document.querySelector("#withSound").checked == true) {
-        var audio = document.querySelector("#myAudio")
         audio.play()
         console.log('sound played')
       }
