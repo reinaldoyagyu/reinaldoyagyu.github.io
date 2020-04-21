@@ -42,6 +42,7 @@ function startTime() {
     case 25, 0:
     case 30, 0:
     case 55, 0:
+      console.log('switch case ok')
       if (document.querySelector("#withSound").checked == true) {
         audio.play()
         console.log('sound played')
