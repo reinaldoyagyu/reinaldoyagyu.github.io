@@ -12,10 +12,13 @@ function startTime() {
   m = checkTime(m)
   s = checkTime(s)
   document.querySelector("#clock").innerHTML = h + ":" + m + ":" + s
+
   if (h >= 8 && h <= 18) { var workHour = true }
   else { workHour = false }
+
   if ((m >= 55) || (m >= 25 && m <= 30)) { var interval = true }
   else { interval = false }
+
   if (workHour && !interval) {
     document.querySelector("#description").innerHTML = "Work work!!!"
     document.body.className = "focus"
@@ -32,6 +35,7 @@ function startTime() {
     document.querySelector("#description").innerHTML = "Get up!!!"
     document.body.className = "getUp"
   }
+
   switch (m, s) {
     case 0, 0:
     case 5, 0:
