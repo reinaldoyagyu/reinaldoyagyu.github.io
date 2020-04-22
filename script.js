@@ -42,7 +42,7 @@ function startTime() {
   }
 
   if (s == 0) {
-    if (m == 0 || m == 5 || m == 25 || m == 30 || m == 55) {
+    if (m == 0 || m == 25 || m == 30 || m == 55) {
       if (document.querySelector("#withSound").checked == true) {
         audio.play()
         console.log('sound played')
